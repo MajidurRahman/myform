@@ -1,0 +1,34 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create New</a> User/Client List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Client Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>project Name</th>
+            <th>Date</th>
+            <th>type of submition</th>
+            <th>need to tag Other Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.clientName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.projectName}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.typeOfSubmission}}</td>
+            <td>{{this.otherDep}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
